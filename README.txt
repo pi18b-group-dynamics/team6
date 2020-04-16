@@ -1,5 +1,5 @@
 # team6
-Игра "Conqueror of space"
+Игра "Conqueror Of Space"
 
 Игра разрабатывается на движке Unity. 
 Жанр игры Экшен Аркада 

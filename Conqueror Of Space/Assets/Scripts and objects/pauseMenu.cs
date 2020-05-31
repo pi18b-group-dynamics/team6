@@ -5,8 +5,11 @@ using UnityEngine;
 public class pauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public static bool Paused = false;
 
     public GameObject pauseMenuGUI;
+    public GameObject options;
+
     // Update is called once per frame
     void Update()
     {
@@ -25,9 +28,22 @@ public class pauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        GetComponent<MainMenuScript>().confirmExitToMenu.SetActive(false);
+        GetComponent<MainMenuScript>().confirmExitToDesctop.SetActive(false);
+        GetComponent<MainMenuScript>().options.SetActive(false);
+        GetComponent<MainMenuScript>().autor.SetActive(false);
+        GetComponent<MainMenuScript>().help.SetActive(false);
+
         pauseMenuGUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        Paused = false;
+    }
+
+    public void toPause()
+    {
+        pauseMenuGUI.SetActive(true);
+        options.SetActive(false);
     }
 
 
@@ -36,5 +52,6 @@ public class pauseMenu : MonoBehaviour
         pauseMenuGUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        Paused = true;
     }
 }

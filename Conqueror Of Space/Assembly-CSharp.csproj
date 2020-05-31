@@ -63,39 +63,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AddScore.cs" />
-    <Compile Include="Assets\boss1.cs" />
-    <Compile Include="Assets\ButtonFX.cs" />
-    <Compile Include="Assets\Enemy1.cs" />
-    <Compile Include="Assets\Enemy2.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\WFX_BulletHoleDecal.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\WFX_LightFlicker.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Spawn System\CFX_SpawnSystem.cs" />
-    <Compile Include="Assets\gameOver.cs" />
-    <Compile Include="Assets\gameOverWin.cs" />
-    <Compile Include="Assets\healthBar.cs" />
-    <Compile Include="Assets\levelTime.cs" />
-    <Compile Include="Assets\MainMenuScript.cs" />
-    <Compile Include="Assets\playerLaser.cs" />
-    <Compile Include="Assets\Score.cs" />
+    <Compile Include="Assets\Scripts and objects\AddScore.cs" />
     <Compile Include="Assets\Scripts and objects\AsteroidsScript.cs" />
+    <Compile Include="Assets\Scripts and objects\boss1.cs" />
     <Compile Include="Assets\Scripts and objects\buttonFX.cs" />
     <Compile Include="Assets\Scripts and objects\destroyTrash.cs" />
     <Compile Include="Assets\Scripts and objects\EmitterScript.cs" />
+    <Compile Include="Assets\Scripts and objects\Enemy1.cs" />
+    <Compile Include="Assets\Scripts and objects\Enemy2.cs" />
     <Compile Include="Assets\Scripts and objects\enemyLaser.cs" />
+    <Compile Include="Assets\Scripts and objects\gameOver.cs" />
+    <Compile Include="Assets\Scripts and objects\gameOverWin.cs" />
     <Compile Include="Assets\Scripts and objects\GunScript.cs" />
+    <Compile Include="Assets\Scripts and objects\healthBar.cs" />
+    <Compile Include="Assets\Scripts and objects\helpScript.cs" />
     <Compile Include="Assets\Scripts and objects\LeftLaser.cs" />
+    <Compile Include="Assets\Scripts and objects\levelTime.cs" />
+    <Compile Include="Assets\Scripts and objects\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts and objects\MainPlayerLaser.cs" />
     <Compile Include="Assets\Scripts and objects\moveDown.cs" />
     <Compile Include="Assets\Scripts and objects\pauseMenu.cs" />
     <Compile Include="Assets\Scripts and objects\Player.cs" />
+    <Compile Include="Assets\Scripts and objects\playerLaser.cs" />
     <Compile Include="Assets\Scripts and objects\RightLaser.cs" />
+    <Compile Include="Assets\Scripts and objects\Score.cs" />
     <Compile Include="Assets\Scripts and objects\ShieldMove.cs" />
+    <Compile Include="Assets\Scripts and objects\SoundFX.cs" />
     <Compile Include="Assets\Scripts and objects\soundSettings.cs" />
-    <Compile Include="Assets\SoundFX.cs" />
-    <Compile Include="Assets\spawn.cs" />
+    <Compile Include="Assets\Scripts and objects\spawn.cs" />
     <None Include="Assets\ExplosionEffects\WarFX\Shaders\WFX_S AlphaBlend Scroll.shader" />
     <None Include="Assets\Procedural fire\Shaders\FireSphere.shader" />
     <None Include="Assets\Sounds\Other\BackgroundMusic\ReadMe.txt" />
@@ -114,31 +114,31 @@
     <None Include="Assets\ExplosionEffects\WarFX\Shaders\WFX_S Multiply Soft.shader" />
     <None Include="Assets\ExplosionEffects\WarFX\Shaders\WFX_S Alpha-Diffuse TintColor.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>F:/Project/Conqueror Of Space/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>F:/Project/Conqueror Of Space/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>F:/Project/Conqueror Of Space/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>F:/Project/Conqueror Of Space/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>F:/Project/Conqueror Of Space/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>F:/Project/Conqueror Of Space/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>F:/Project/Conqueror Of Space/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:/Project/Conqueror Of Space/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>F:/Project/Conqueror Of Space/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

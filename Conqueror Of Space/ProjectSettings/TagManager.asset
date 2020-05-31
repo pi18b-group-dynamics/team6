@@ -5,7 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Asteroid
-  - GameBoundary
+  - FxTemporaire
+  - boostShield
+  - boostLive
+  - boostIntangible
+  - boostFire
+  - Laser
+  - Boundary
+  - Enemy
+  - EnemyLaser
+  - Boss
   layers:
   - Default
   - TransparentFX

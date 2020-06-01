@@ -12,6 +12,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject shipСhange;
     public GameObject confirmExitToDesctop;
     public GameObject confirmExitToMenu;
+    public GameObject playerName;
     public GameObject autor;
     public GameObject help;
 
@@ -31,6 +32,7 @@ public class MainMenuScript : MonoBehaviour
             levelMenu.SetActive(false);
             options.SetActive(false);
             records.SetActive(false);
+            playerName.SetActive(false);
             confirmExitToDesctop.SetActive(false);
             mainMenu.SetActive(true);
     }
@@ -40,6 +42,7 @@ public class MainMenuScript : MonoBehaviour
     public void toLevelMenu ()
     {
             mainMenu.SetActive(false);
+            playerName.SetActive(true);
             levelMenu.SetActive(true);
     }
     // меню настроек

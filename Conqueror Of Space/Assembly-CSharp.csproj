@@ -68,6 +68,10 @@
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\WFX_BulletHoleDecal.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\WFX_LightFlicker.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Spawn System\CFX_SpawnSystem.cs" />
+    <Compile Include="Assets\gameOverScript.cs" />
+    <Compile Include="Assets\playerName.cs" />
+    <Compile Include="Assets\playerNameScript.cs" />
+    <Compile Include="Assets\recordsTabel.cs" />
     <Compile Include="Assets\Scripts and objects\AddScore.cs" />
     <Compile Include="Assets\Scripts and objects\AsteroidsScript.cs" />
     <Compile Include="Assets\Scripts and objects\boss1.cs" />

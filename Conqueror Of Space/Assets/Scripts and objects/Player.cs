@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public GameObject LaserRight;
 
     public GameObject gameOver;
+    public GameObject Emiter;
+    public GameObject boss;
 
     public float timeDeth = 2;
 
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour
     public float shotDeley = 1; 
     float nextShot = 0;
 
-    float maxX = 55, minX = -55, maxZ = 18, minZ = -29;
+    float maxX = 55, minX = -55, maxZ = -1, minZ = -29;
 
     void Start()
     {
@@ -120,6 +122,7 @@ public class Player : MonoBehaviour
             {
                 Instantiate(gameOver, transform.position, Quaternion.identity);
                 Destroy(gameObject);
+                gameOver.SetActive(true);
             }
         }
     }
@@ -136,6 +139,8 @@ public class Player : MonoBehaviour
             {
                 Instantiate(gameOver, transform.position, Quaternion.identity);
                 Destroy(gameObject);
+                gameOver.SetActive(true);
+
             }
         }
     }
@@ -153,6 +158,7 @@ public class Player : MonoBehaviour
                 GetComponent<Score>().ScoreCount += 10;
                 Instantiate(shipExplosion, transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
+
             }
             if (lives <= 0)
             {
@@ -160,6 +166,8 @@ public class Player : MonoBehaviour
                 Instantiate(gameOver, transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
                 Destroy(gameObject);
+                gameOver.SetActive(true);
+
             }
         }
     }
@@ -179,8 +187,15 @@ public class Player : MonoBehaviour
                 Instantiate(shipExplosion, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 Destroy(other.gameObject);
+                gameOver.SetActive(true);
+
             }
         }
+    }
+
+    void gameOverMenu()
+    {
+
     }
 
     void tribleFire(float timeBoost)

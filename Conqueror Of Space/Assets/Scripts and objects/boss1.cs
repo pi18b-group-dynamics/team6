@@ -18,6 +18,8 @@ public class boss1 : MonoBehaviour
     public GameObject finalExplotion;
     public GameObject Laser;
 
+    public GameObject gameOver;
+
     public int lives;
     public int startlives;
 
@@ -62,6 +64,7 @@ public class boss1 : MonoBehaviour
                     player.GetComponent<Score>().ScoreCount += 1000;
                     Destroy(other.gameObject);
                     Destroy(gameObject);
+                    gameOver.SetActive(true);
                 }
                 break;
             case "Boundary":

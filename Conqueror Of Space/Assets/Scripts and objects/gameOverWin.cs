@@ -12,13 +12,5 @@ public class gameOverWin : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        timeDeth -= Time.deltaTime;
-        if (timeDeth <= 0)
-        {
-            Time.timeScale = 0f;
-
-        }
-    }
+   
 }

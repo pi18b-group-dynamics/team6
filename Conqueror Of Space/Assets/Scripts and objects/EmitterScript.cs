@@ -18,7 +18,7 @@ public class EmitterScript : MonoBehaviour
     public GameObject Boss;
 
     public float minDelay, maxDelay;
-    public float timeSpawn = 20f;
+    public float timeSpawn;
     public float minEnemyDelay1, maxEnemyDelay1;
     public float minEnemyDelay2, maxEnemyDelay2;
     public float minBoostDelay = 1f, maxBoostDelay = 5f;

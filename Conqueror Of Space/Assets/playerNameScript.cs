@@ -23,6 +23,8 @@ public class playerNameScript : MonoBehaviour
         if (input.text != null || !input.text.Equals(" "))
         {
             PlayerPrefs.SetString("PlayerName", input.text);
+            PlayerPrefs.SetInt("PlayerScore", 0);
+            PlayerPrefs.SetInt("PlayerScoreNew", 0);
             gameObject.SetActive(false);
         }
         else input.text = "Ведите ваш никнейм!"; 

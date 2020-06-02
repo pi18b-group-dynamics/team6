@@ -98,11 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c90816ba929d24ca81ed45ecbadc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSpawn: 1
-  timeDeth: 0
   Gun1: {fileID: 3697802784968941377}
   Gun2: {fileID: 3697802786665744195}
   Player: {fileID: 0}
+  player: {fileID: 0}
   laserSound: {fileID: 3697802785655610566}
   explotion: {fileID: 6545154575475022228, guid: 2cfd29d5126fdb9449b4e128f647efbf,
     type: 3}
@@ -111,8 +110,12 @@ MonoBehaviour:
   finalExplotion: {fileID: 8497003739239105612, guid: bb4ba0e4412047c49a5a5d0901874cf8,
     type: 3}
   Laser: {fileID: 6697935032244621377, guid: 7e6556b490091e34998eecff89a47573, type: 3}
+  gameOver: {fileID: 0}
+  otherO: {fileID: 0}
   lives: 10
+  startlives: 0
   shotDeley: 3
+  timeDeth: 0
 --- !u!82 &3697802785655610566
 AudioSource:
   m_ObjectHideFlags: 0

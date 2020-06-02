@@ -5,7 +5,7 @@ using UnityEngine;
 public class AsteroidsScript : MonoBehaviour
 {
     public float minRotationSpeed, maxRotationSpeed;
-    public float minMoveSpeed, maxMoveSpeed;
+    float minMoveSpeed, maxMoveSpeed;
     public GameObject asteroidExplosion;
     public GameObject smallAsteroidExplosion;
     public GameObject explotion;
@@ -17,6 +17,11 @@ public class AsteroidsScript : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
+        {
+            minMoveSpeed = 5; maxMoveSpeed = 15;
+        }
+        else { minMoveSpeed = 8; maxMoveSpeed = 20; }
         Player = GameObject.Find("Player");
         Rigidbody asteroid = GetComponent<Rigidbody>();
         asteroid.angularVelocity = Random.insideUnitSphere * Random.Range(minRotationSpeed, maxRotationSpeed);
@@ -63,6 +68,7 @@ public class AsteroidsScript : MonoBehaviour
         }
 
     }
+    
     void Update()
     {
         

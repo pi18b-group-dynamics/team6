@@ -19,11 +19,17 @@ public class boss1 : MonoBehaviour
     public GameObject Laser;
 
     public GameObject gameOver;
+    public GameObject otherO;
 
     public int lives;
     public int startlives;
 
+    bool destroy = false;
+
+    string state = "Победа";
+
     public float shotDeley = 1;
+    public float timeDeth = 1.5f;
     float nextShot = 0;
 
     float maxX = 55, minX = -55, maxZ = 70, minZ = 18;
@@ -62,19 +68,36 @@ public class boss1 : MonoBehaviour
                     Instantiate(finalExplotion, transform.position, Quaternion.identity);
                     Instantiate(explotion, transform.position, Quaternion.identity);
                     player.GetComponent<Score>().ScoreCount += 1000;
-                    Destroy(other.gameObject);
-                    Destroy(gameObject);
-                    gameOver.SetActive(true);
+                    destroy = true;
+                    otherO = other.gameObject;
                 }
                 break;
             case "Boundary":
                 return;
         }
+    }
 
+    void startGameEnd()
+    {
+            gameOver.GetComponent<gameOverScript>().header.text = state;
+            gameOver.SetActive(true);
     }
 
     void Update()
     {
+        if (destroy)
+        {
+            if (timeDeth > 0)
+            {
+                timeDeth -= Time.deltaTime;
+            }
+            else
+            {
+                startGameEnd();
+                Destroy(otherO);
+                Destroy(gameObject);
+            }
+        }
             attack();
 
             BossShip.position = Vector3.MoveTowards(BossShip.transform.position, Player.position, Time.deltaTime*30);

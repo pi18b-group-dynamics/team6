@@ -8,6 +8,7 @@ public class levelTime : MonoBehaviour
 
     public Image levTime;
     public float time;
+    public float deltime;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class levelTime : MonoBehaviour
     {
         if (time > 0)
         {
-            time -= Time.deltaTime * 0.05f;
+            time -= Time.deltaTime * deltime;
             levTime.fillAmount = time;
         }
         else { levTime.fillAmount = 0; }

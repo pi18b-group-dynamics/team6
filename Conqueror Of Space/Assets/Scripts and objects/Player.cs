@@ -14,11 +14,12 @@ public class Player : MonoBehaviour
     public GameObject LaserLeft;
     public GameObject LaserRight;
 
-    public GameObject gameOver;
     public GameObject Emiter;
     public GameObject boss;
 
-    public float timeDeth = 2;
+    public GameObject ship1;
+    public GameObject ship2;
+    public GameObject ship3;
 
     public Text liveCount;
     public Text fireTime;
@@ -34,6 +35,14 @@ public class Player : MonoBehaviour
 
     public AudioSource laserSound;
     public AudioSource boostSound;
+
+    string state = "Поражение";
+    public GameObject gameOver;
+    
+    public GameObject otherO;
+    bool destroy = false;
+    public float timeDeth = 1.5f; 
+
 
     public float timeBoostFire;
     public float timeBoostDefender1;
@@ -52,11 +61,28 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
+        if (PlayerPrefs.GetInt("PlayerShip") == 1)
+        {
+            ship1.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("PlayerShip") == 2)
+        {
+            ship2.SetActive(true);
+        }
+        else ship3.SetActive(true);
+
         PlayerShip = GetComponent<Rigidbody>();
         BlueLight.enabled = false; GreenLight.enabled = false;
         boostFire = false; boostShield = false ; boostIntangible = false;
         timeBoostFire = 0; timeBoostDefender1 = 0; timeBoostDefender2 = 0;
         GetComponent<SphereCollider>().enabled = false;
+    }
+
+    void startGameEnd()
+    {
+        gameOver.SetActive(true);
+        gameOver.GetComponent<gameOverScript>().header.text = state;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -68,12 +94,14 @@ public class Player : MonoBehaviour
                 timeBoostFire = 20f;
                 boostFire = true;
                 boostSound.Play();
+                GetComponent<Score>().ScoreCount += 10;
                 fireTime.text = Convert.ToString(lives);
                 break; ;
             case "boostLive":
                 Destroy(other.gameObject);
                 boostSound.Play();
                 lives++;
+                GetComponent<Score>().ScoreCount += 10;
                 liveCount.text = Convert.ToString(lives);
                 break;
             case "boostIntangible":
@@ -81,6 +109,7 @@ public class Player : MonoBehaviour
                 timeBoostDefender1 = 20f;
                 boostIntangible = true;
                 boostSound.Play();
+                GetComponent<Score>().ScoreCount += 10;
                 inviseTime.text = Convert.ToString(lives);
                 break;
             case "boostShield":
@@ -88,6 +117,7 @@ public class Player : MonoBehaviour
                 timeBoostDefender2 = 20f;
                 boostShield = true;
                 boostSound.Play();
+                GetComponent<Score>().ScoreCount += 10;
                 shieldTime.text = Convert.ToString(lives);
                 break;
             case "Asteroid":
@@ -96,8 +126,8 @@ public class Player : MonoBehaviour
                 AsteroidDestroy(other);
                 break;
             case "Enemy":
-                Instantiate(explotion, transform.position, Quaternion.identity);
-                Instantiate(shipExplosion, transform.position, Quaternion.identity);
+                //Instantiate(explotion, transform.position, Quaternion.identity);
+                //Instantiate(shipExplosion, transform.position, Quaternion.identity);
                 EnemyDestroy(other);
                 break;
             case "EnemyLaser":
@@ -121,8 +151,8 @@ public class Player : MonoBehaviour
             if (lives == 0)
             {
                 Instantiate(gameOver, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-                gameOver.SetActive(true);
+                destroy = true;
+                otherO = other.gameObject;
             }
         }
     }
@@ -138,9 +168,7 @@ public class Player : MonoBehaviour
             if (lives == 0)
             {
                 Instantiate(gameOver, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-                gameOver.SetActive(true);
-
+                destroy = true;
             }
         }
     }
@@ -165,9 +193,8 @@ public class Player : MonoBehaviour
                 Instantiate(shipExplosion, transform.position, Quaternion.identity);
                 Instantiate(gameOver, transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
-                Destroy(gameObject);
-                gameOver.SetActive(true);
-
+                destroy = true;
+                otherO = other.gameObject;
             }
         }
     }
@@ -185,17 +212,10 @@ public class Player : MonoBehaviour
             {
                 Instantiate(gameOver, transform.position, Quaternion.identity);
                 Instantiate(shipExplosion, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-                Destroy(other.gameObject);
-                gameOver.SetActive(true);
-
+                destroy = true;
+                otherO = other.gameObject;
             }
         }
-    }
-
-    void gameOverMenu()
-    {
-
     }
 
     void tribleFire(float timeBoost)
@@ -240,22 +260,40 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        liveCount.text = Convert.ToString(lives);
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        PlayerShip.velocity = new Vector3(moveHorizontal, 0, moveVertical) * speed * 15;
+        if (destroy)
+        {
+            PlayerShip.velocity = new Vector3(0,0,0) * speed * 0;
+            if (timeDeth > 0)
+            {
+                timeDeth -= Time.deltaTime;
+            }
+            else
+            {
+                startGameEnd();
+                if(otherO.tag == "EnemyLaser" || otherO.tag == "Enemy"|| otherO.tag == "Asteroid")
+                Destroy(otherO);
+                    Destroy(gameObject);
+            }
+        }
+        else
+        {
+            liveCount.text = Convert.ToString(lives);
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            PlayerShip.velocity = new Vector3(moveHorizontal, 0, moveVertical) * speed * 15;
 
-        PlayerShip.rotation = Quaternion.Euler(PlayerShip.velocity.z * tilt / 50, 0, -PlayerShip.velocity.x * tilt / 50);
+            PlayerShip.rotation = Quaternion.Euler(PlayerShip.velocity.z * tilt / 50, 0, -PlayerShip.velocity.x * tilt / 50);
 
-        // макс и мин позиции
-        float newXPosition = Mathf.Clamp(PlayerShip.position.x, minX, maxX);
-        float newZPosition = Mathf.Clamp(PlayerShip.position.z, minZ, maxZ);
+            // макс и мин позиции
+            float newXPosition = Mathf.Clamp(PlayerShip.position.x, minX, maxX);
+            float newZPosition = Mathf.Clamp(PlayerShip.position.z, minZ, maxZ);
 
-        PlayerShip.position = new Vector3(newXPosition, 0, newZPosition);
-        
-        boostFireWork();
-        boostShieldWork();
-        boostIntengibledWork();
+            PlayerShip.position = new Vector3(newXPosition, 0, newZPosition);
+
+            boostFireWork();
+            boostShieldWork();
+            boostIntengibledWork();
+        }
     }
 
     private void boostFireWork()
@@ -277,7 +315,7 @@ public class Player : MonoBehaviour
         }
         activateShild(timeBoostDefender2);
     }
-
+    
     private void boostIntengibledWork()
     {
         if (boostIntangible = true && timeBoostDefender1 > 0)

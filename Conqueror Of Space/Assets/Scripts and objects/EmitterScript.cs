@@ -22,10 +22,10 @@ public class EmitterScript : MonoBehaviour
     public float minEnemyDelay1, maxEnemyDelay1;
     public float minEnemyDelay2, maxEnemyDelay2;
     public float minBoostDelay = 1f, maxBoostDelay = 5f;
-    float nextLaunch;
+    public float nextLaunch;
     float nextLaunchBoost;
-    float nextLaunchEnemy1;
-    float nextLaunchEnemy2;
+    public float nextLaunchEnemy1;
+    public float nextLaunchEnemy2;
 
 
     // Start is called before the first frame update
@@ -94,14 +94,14 @@ public class EmitterScript : MonoBehaviour
             float xPos = Random.Range(-size / 2, size / 2);
             Vector3 enemy1 = new Vector3(xPos, 0, transform.position.z);
             Instantiate(Enemy1, enemy1, Quaternion.identity);
-            nextLaunchEnemy1 = Time.time + 15;
+            nextLaunchEnemy1 = Time.time + Random.Range(minEnemyDelay1, maxEnemyDelay1);
         }
         if (Time.time > nextLaunchEnemy2)
         {
             float xPos = Random.Range(-size / 2, size / 2);
             Vector3 enemy2 = new Vector3(xPos, 0, transform.position.z);
             Instantiate(Enemy2, enemy2, Quaternion.identity);
-            nextLaunchEnemy2 = Time.time + 15;
+            nextLaunchEnemy2 = Time.time + Random.Range(minEnemyDelay2, maxEnemyDelay2);
         }
     }
 }

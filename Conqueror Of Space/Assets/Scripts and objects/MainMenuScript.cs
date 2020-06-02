@@ -29,12 +29,14 @@ public class MainMenuScript : MonoBehaviour
     // универсальная кнопка для выхода в главное меню
     public void toMainMenu()
     {
-            levelMenu.SetActive(false);
-            options.SetActive(false);
-            records.SetActive(false);
-            playerName.SetActive(false);
-            confirmExitToDesctop.SetActive(false);
-            mainMenu.SetActive(true);
+        mainMenu.SetActive(true);
+        levelMenu.SetActive(false);
+        options.SetActive(false);
+        records.SetActive(false);
+        playerName.SetActive(false);
+        confirmExitToDesctop.SetActive(false);
+        confirmExitToMenu.SetActive(false);
+
     }
 
     // кнопки главного меню
@@ -48,9 +50,10 @@ public class MainMenuScript : MonoBehaviour
     // меню настроек
     public void toOptions()
     {
+        options.SetActive(true);
+        shipСhange.SetActive(false);
         help.SetActive(false);
         autor.SetActive(false);
-        options.SetActive(true);
         mainMenu.SetActive(false);
     }
     // таблица рекордов
@@ -74,32 +77,51 @@ public class MainMenuScript : MonoBehaviour
     // уровень 1
     public void lelel1()
     {
-          SceneManager.LoadScene("testLevel", LoadSceneMode.Single);
+        if(PlayerPrefs.GetInt("Difficulty") == 0)
+          SceneManager.LoadScene("level1", LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene("level1hard", LoadSceneMode.Single);
+
     }
     // уровень 2
     public void lelel2()
     {
-        SceneManager.LoadScene("level2", LoadSceneMode.Single);
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
+            SceneManager.LoadScene("level2", LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene("level2hard", LoadSceneMode.Single);
     }
     // уровень 3
     public void lelel3()
     {
-        SceneManager.LoadScene("level3", LoadSceneMode.Single);
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
+            SceneManager.LoadScene("level3", LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene("level3hard", LoadSceneMode.Single);
     }
     // уровень 4
     public void lelel4()
     {
-        SceneManager.LoadScene("level4", LoadSceneMode.Single);
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
+            SceneManager.LoadScene("level4", LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene("level4hard", LoadSceneMode.Single);
     }
     // уровень 5
     public void lelel5()
     {
-        SceneManager.LoadScene("level5", LoadSceneMode.Single);
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
+            SceneManager.LoadScene("level5", LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene("level5hard", LoadSceneMode.Single);
     }
     // уровень 6
     public void lelel6()
     {
-        SceneManager.LoadScene("level6", LoadSceneMode.Single);
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
+            SceneManager.LoadScene("level6", LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene("level6hard", LoadSceneMode.Single);
     }
 
     // кнопки меню настроек
@@ -107,7 +129,6 @@ public class MainMenuScript : MonoBehaviour
     {
         shipСhange.SetActive(true);
         options.SetActive(false);
-        Debug.Log("Ship");
     }
 
     public void toAutor()

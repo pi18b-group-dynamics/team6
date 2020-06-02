@@ -18,16 +18,22 @@ public class Enemy2 : MonoBehaviour
 
     public AudioSource laserSound;
 
-    public float speed = 3;  // Скорость полёта
+    float speed;  // Скорость полёта
     public float tilt = 2;    // Наклон
 
-    public float shotDeley = 1;
+    float shotDeley;
     float nextShot = 0;
 
     float maxX = 55, minX = -55, maxZ = 70, minZ = 1;
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
+        {
+            speed = 3f;
+            shotDeley = 1.5f;
+        }
+        else { speed = 5f; shotDeley = 1f; }
         target = GameObject.Find("Player");
         Ship = GetComponent<Rigidbody>();
     }

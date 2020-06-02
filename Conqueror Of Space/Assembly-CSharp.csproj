@@ -63,13 +63,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\autor.cs" />
+    <Compile Include="Assets\backgroung.cs" />
+    <Compile Include="Assets\changeShip.cs" />
+    <Compile Include="Assets\difficulty.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\WFX_BulletHoleDecal.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Scripts\WFX_LightFlicker.cs" />
     <Compile Include="Assets\ExplosionEffects\WarFX\Spawn System\CFX_SpawnSystem.cs" />
     <Compile Include="Assets\gameOverScript.cs" />
-    <Compile Include="Assets\playerName.cs" />
     <Compile Include="Assets\playerNameScript.cs" />
     <Compile Include="Assets\recordsTabel.cs" />
     <Compile Include="Assets\Scripts and objects\AddScore.cs" />
@@ -117,6 +120,7 @@
     <None Include="Assets\ExplosionEffects\WarFX\Shaders\WFX_S Particle Multiply A8.shader" />
     <None Include="Assets\ExplosionEffects\WarFX\Shaders\WFX_S Multiply Soft.shader" />
     <None Include="Assets\ExplosionEffects\WarFX\Shaders\WFX_S Alpha-Diffuse TintColor.shader" />
+    <None Include="Assets\SpaceShipPack\READ ME!.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/Repositories/team6/Conqueror Of Space/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

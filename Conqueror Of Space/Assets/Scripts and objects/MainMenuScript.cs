@@ -16,6 +16,10 @@ public class MainMenuScript : MonoBehaviour
     public GameObject autor;
     public GameObject help;
 
+    public void Start()
+    {
+    }
+
     public void Update()
     {
             

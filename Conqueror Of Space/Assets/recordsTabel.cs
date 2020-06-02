@@ -66,7 +66,7 @@ public class recordsTabel : MonoBehaviour
             scores[i] = PlayerPrefs.GetInt(string.Format("PlayerScore{0}", i++));
         }
         players[10] = PlayerPrefs.GetString("PlayerName");
-        scores[10] = PlayerPrefs.GetInt("PlayerScore");
+        scores[10] = PlayerPrefs.GetInt("PlayerScoreNew");
         sortTable();
         fillToText();
     }
@@ -79,7 +79,7 @@ public class recordsTabel : MonoBehaviour
         {
             for (int j = i + 1; j < scores.Length; j++)
             {
-                if (scores[i] > scores[j])
+                if (scores[i] < scores[j])
                 {
                     temp = scores[i];
                     tempS = players[i];
@@ -90,11 +90,11 @@ public class recordsTabel : MonoBehaviour
                 }
             }
         }
-        for (int i = 0; i < 10; i++)
-        {
-            PlayerPrefs.SetString(string.Format("PlayerName{0}", i++), players[i]);
-            PlayerPrefs.SetInt(string.Format("PlayerScore{0}", i++), scores[i]);
-        }
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    PlayerPrefs.SetString(string.Format("PlayerName{0}", i++), players[i]);
+        //    PlayerPrefs.SetInt(string.Format("PlayerScore{0}", i++), scores[i]);
+        //}
     }
 
     void fillToText()

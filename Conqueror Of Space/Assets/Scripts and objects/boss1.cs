@@ -87,20 +87,13 @@ public class boss1 : MonoBehaviour
     {
         if (destroy)
         {
-            if (timeDeth > 0)
-            {
-                timeDeth -= Time.deltaTime;
-            }
-            else
-            {
                 startGameEnd();
                 Destroy(otherO);
                 Destroy(gameObject);
-            }
         }
             attack();
 
-            BossShip.position = Vector3.MoveTowards(BossShip.transform.position, Player.position, Time.deltaTime*30);
+            BossShip.position = Vector3.MoveTowards(BossShip.transform.position, Player.position, 0.5f);
 
             float newXPosition = Mathf.Clamp(BossShip.position.x, minX, maxX);
             float newZPosition = Mathf.Clamp(BossShip.position.z, minZ, maxZ);

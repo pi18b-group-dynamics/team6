@@ -2803,6 +2803,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 7159773355407347160, guid: 63e871e9bd7b9dc429bcdd5c4c65c040,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159773355360635091, guid: 63e871e9bd7b9dc429bcdd5c4c65c040,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6376033447129623041, guid: 63e871e9bd7b9dc429bcdd5c4c65c040, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 63e871e9bd7b9dc429bcdd5c4c65c040, type: 3}

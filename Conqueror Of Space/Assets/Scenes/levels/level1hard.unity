@@ -2795,7 +2795,7 @@ PrefabInstance:
     - target: {fileID: 7159302474262555272, guid: 63e871e9bd7b9dc429bcdd5c4c65c040,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7159773355360635101, guid: 63e871e9bd7b9dc429bcdd5c4c65c040,
         type: 3}
@@ -2831,6 +2831,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159773355407347160, guid: 63e871e9bd7b9dc429bcdd5c4c65c040,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159773355360635091, guid: 63e871e9bd7b9dc429bcdd5c4c65c040,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6376033447129623041, guid: 63e871e9bd7b9dc429bcdd5c4c65c040, type: 3}

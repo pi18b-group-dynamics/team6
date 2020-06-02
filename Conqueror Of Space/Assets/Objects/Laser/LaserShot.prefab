@@ -9569,8 +9569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  explotion: {fileID: 8676250895752916079, guid: 67e9c5958265a434c90cf3a00364de24,
-    type: 3}
 --- !u!54 &2832453786941070077
 Rigidbody:
   m_ObjectHideFlags: 0
